@@ -15,7 +15,9 @@ function timeblockColor() {
   //Track number of hours and loop over time blocks
   var timeNow = dayjs().hour();
   $(".time-block").each(function () {
-    var currentHour = parseInt($(this).attr("id"));
+
+    var hour = $(this).attr("id").substring(5);
+    var currentHour = parseInt(hour);
 
     if (currentHour > timeNow) {
       $(this).addClass("future");
